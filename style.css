@@ -258,3 +258,18 @@ footer,
   right: 15px;
   z-index: 999;
 }
+
+.hero {
+  text-align: center;
+}
+
+.hero h1,
+.hero p,
+.hero a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .btn {
+  display: inline-block;
+}
