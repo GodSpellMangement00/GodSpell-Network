@@ -1,19 +1,27 @@
 /* =========================
-   THEME SYSTEM (MANUAL SELECT)
+   THEME SYSTEM (MANUAL SELECT + SAVE)
 ========================= */
 function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
+
+  const menu = document.getElementById("themeMenu");
+  if (menu) menu.style.display = "none";
 }
 
-// Load saved theme (default = purple)
+function toggleThemeMenu() {
+  const menu = document.getElementById("themeMenu");
+  if (!menu) return;
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
 window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("theme") || "purple";
-  setTheme(savedTheme);
+  document.documentElement.setAttribute("data-theme", savedTheme);
 });
 
 /* =========================
-   COPY SERVER IP (UNIVERSAL)
+   COPY SERVER IP (SAFE)
 ========================= */
 function copyServerIP() {
   const ip = "pika-network.net";
@@ -21,20 +29,18 @@ function copyServerIP() {
   const tempInput = document.createElement("input");
   tempInput.value = ip;
   document.body.appendChild(tempInput);
-
   tempInput.select();
   tempInput.setSelectionRange(0, 99999);
   document.execCommand("copy");
-
   document.body.removeChild(tempInput);
 
   const btn = document.activeElement;
   if (btn) {
-    const oldText = btn.textContent;
+    const old = btn.textContent;
     btn.textContent = "Copied ✔";
     btn.style.transform = "scale(1.1)";
     setTimeout(() => {
-      btn.textContent = oldText;
+      btn.textContent = old;
       btn.style.transform = "scale(1)";
     }, 1500);
   }
@@ -59,7 +65,7 @@ if (faqSearch) {
   faqSearch.addEventListener("input", () => {
     const q = faqSearch.value.toLowerCase();
     document.querySelectorAll(".faq-item").forEach(item => {
-      item.style.display = item.innerText.toLowerCase().includes(q)
+      item.style.display = item.textContent.toLowerCase().includes(q)
         ? "block"
         : "none";
     });
@@ -155,3 +161,16 @@ style.innerHTML = `
   to { transform: scale(2.5); opacity: 0; }
 }`;
 document.head.appendChild(style);
+
+/* =========================
+   CLOSE THEME MENU ON OUTSIDE CLICK
+========================= */
+document.addEventListener("click", e => {
+  const menu = document.getElementById("themeMenu");
+  const switcher = document.querySelector(".theme-switch");
+  if (!menu || !switcher) return;
+
+  if (!switcher.contains(e.target)) {
+    menu.style.display = "none";
+  }
+});
