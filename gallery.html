@@ -8,8 +8,8 @@
   <style>
     body{
       margin:0;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top, #1a3d2f, #0b1f18);
+      font-family:'Segoe UI',sans-serif;
+      background:radial-gradient(circle at top,#1a3d2f,#0b1f18);
       color:#eafff5;
       min-height:100vh;
     }
@@ -41,14 +41,14 @@
     .gallery-item{
       border-radius:16px;
       overflow:hidden;
-      background:rgba(255,255,255,0.05);
-      box-shadow:0 10px 30px rgba(0,0,0,.4);
-      transition:.3s;
+      background:rgba(255,255,255,0.04);
+      box-shadow:0 6px 18px rgba(0,0,0,.35);
+      transition:transform .25s ease, box-shadow .25s ease;
     }
 
     .gallery-item:hover{
-      transform:translateY(-6px) scale(1.02);
-      box-shadow:0 0 25px rgba(0,255,200,.35);
+      transform:translateY(-4px);
+      box-shadow:0 0 18px rgba(0,255,200,.35);
     }
 
     .gallery-item img{
@@ -56,6 +56,7 @@
       height:170px;
       object-fit:cover;
       display:block;
+      image-rendering:auto;
     }
 
     .caption{
@@ -75,11 +76,11 @@
       color:#00382a;
       background:linear-gradient(90deg,#3affc6,#6fffd6);
       font-weight:600;
-      box-shadow:0 0 20px rgba(0,255,200,.5);
+      box-shadow:0 0 18px rgba(0,255,200,.45);
     }
 
     .back:hover{
-      box-shadow:0 0 35px rgba(0,255,200,.9);
+      box-shadow:0 0 30px rgba(0,255,200,.85);
     }
   </style>
 </head>
@@ -92,63 +93,65 @@
   <div class="gallery-container">
     <div class="gallery-grid">
 
+      <!-- FIRST IMAGE loads immediately -->
       <div class="gallery-item">
-        <img src="gallery/base1.png">
+        <img src="gallery/base1.png" width="800" height="450" decoding="async">
         <div class="caption">Base 1</div>
       </div>
 
+      <!-- REST LAZY LOAD -->
       <div class="gallery-item">
-        <img src="gallery/base2.png">
+        <img src="gallery/base2.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 2</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base3.png">
+        <img src="gallery/base3.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 3</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base4.png">
+        <img src="gallery/base4.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 4</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base5.png">
+        <img src="gallery/base5.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 5</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base6.png">
+        <img src="gallery/base6.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 6</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base7.png">
+        <img src="gallery/base7.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 7</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base8.png">
+        <img src="gallery/base8.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 8</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base9.png">
+        <img src="gallery/base9.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 9</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base10.png">
+        <img src="gallery/base10.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 10</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base11.png">
+        <img src="gallery/base11.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 11</div>
       </div>
 
       <div class="gallery-item">
-        <img src="gallery/base12.png">
+        <img src="gallery/base12.png" loading="lazy" decoding="async" width="800" height="450">
         <div class="caption">Base 12</div>
       </div>
 
