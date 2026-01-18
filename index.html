@@ -14,9 +14,15 @@
 
 <body>
 
-  <!-- THEME SWITCH -->
+  <!-- THEME PICKER -->
   <div class="theme-switch">
-    <button class="btn" onclick="toggleTheme()">💧 Switch Theme</button>
+    <div class="theme-btn" style="background:#b084ff" onclick="setTheme('purple')" title="Purple"></div>
+    <div class="theme-btn" style="background:#4deeea" onclick="setTheme('aqua')" title="Aqua"></div>
+    <div class="theme-btn" style="background:#ffd36a" onclick="setTheme('gold')" title="Gold"></div>
+    <div class="theme-btn" style="background:#3affc6" onclick="setTheme('green')" title="Green"></div>
+    <div class="theme-btn" style="background:#000" onclick="setTheme('black')" title="Black"></div>
+    <div class="theme-btn" style="background:#fff" onclick="setTheme('white')" title="White"></div>
+    <div class="theme-btn" style="background:#ffe066" onclick="setTheme('yellow')" title="Yellow"></div>
   </div>
 
   <!-- HERO -->
@@ -25,19 +31,18 @@
     <p>Not just grinding — we build a family.</p>
     <p class="small">Established in 2024</p>
 
-    <a href="https://discord.gg/YQVF7sy2gR" class="btn glow">
+    <a href="https://discord.gg/YQVF7sy2gR" class="btn">
       Join Our Discord
     </a>
   </header>
 
-  <!-- ABOUT / STORY -->
+  <!-- OUR STORY -->
   <section class="section">
     <h2>📜 Our Story</h2>
     <div class="card">
       GodSpell was founded in 2024 by Sam with a simple idea —
-      create a friendly Minecraft survival community with no toxicity.
-      Today, we are a growing family of trusted players who grind,
-      build, and support each other.
+      create a friendly Minecraft survival community with zero toxicity.
+      What started as a small grind became a global family.
     </div>
   </section>
 
@@ -45,9 +50,9 @@
   <section class="section">
     <h2>🌟 Vision & Mission</h2>
     <div class="card">
-      Our vision is to connect players from different parts of the world
-      and build something meaningful together.
-      We focus on teamwork, respect, and long-term growth.
+      Our mission is to connect players from all around the world,
+      help each other grow, and build something meaningful together —
+      not just in-game, but as a community.
     </div>
   </section>
 
@@ -74,12 +79,12 @@
   <!-- WHERE WE PLAY -->
   <section class="section">
     <h2>🎮 Where We Play</h2>
-    <div class="card center">
+    <div class="card">
       <p><strong>Game:</strong> Minecraft</p>
       <p><strong>Server:</strong> pika-network.net</p>
       <p><strong>Mode:</strong> Survival</p>
 
-      <button class="btn glow" id="copyIP">Copy Server IP</button>
+      <button class="btn" onclick="copyServerIP()">Copy Server IP</button>
     </div>
   </section>
 
@@ -116,20 +121,20 @@
     </div>
   </section>
 
-  <!-- MEMBERS PREVIEW -->
+  <!-- MEMBERS -->
   <section class="section">
     <h2>🌱 Members</h2>
     <p class="muted">Leaders • Core • Trial • Allies</p>
-    <div class="card center">
-      <a href="member.html" class="btn glow">View All Members</a>
+    <div class="card">
+      <a href="member.html" class="btn">View All Members</a>
     </div>
   </section>
 
-  <!-- GALLERY PREVIEW -->
+  <!-- GALLERY -->
   <section class="section">
     <h2>🖼️ Builds & Bases</h2>
-    <div class="card center">
-      <a href="gallery.html" class="btn glow">View Gallery</a>
+    <div class="card">
+      <a href="gallery.html" class="btn">View Gallery</a>
     </div>
   </section>
 
@@ -146,13 +151,13 @@
   <!-- FAQ -->
   <section class="section">
     <h2>❓ FAQs</h2>
-    <div class="card center">
+    <div class="card">
       <a href="faq.html" class="btn">Go to FAQs</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer author">
+  <footer>
     <p>© 2024 GodSpell Network</p>
     <p>Built with 💜 by DeadSlot</p>
   </footer>
