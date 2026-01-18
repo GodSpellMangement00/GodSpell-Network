@@ -14,18 +14,20 @@
 
 <body>
 
-  <!-- THEME SELECTOR -->
-  <div class="theme-switch">
-    <span style="font-weight:600;margin-right:10px;">Choose theme:</span>
-    <button class="btn" onclick="setTheme('purple')">Purple</button>
-    <button class="btn" onclick="setTheme('aqua')">Aqua</button>
-    <button class="btn" onclick="setTheme('gold')">Gold</button>
-    <button class="btn" onclick="setTheme('green')">Green</button>
-    <button class="btn" onclick="setTheme('black')">Black</button>
-    <button class="btn" onclick="setTheme('white')">White</button>
-    <button class="btn" onclick="setTheme('yellow')">Yellow</button>
-  </div>
+  <!-- THEME SWITCH -->
+<div class="theme-switch">
+  <button class="btn" onclick="toggleThemeMenu()">Change Theme</button>
 
+  <div id="themeMenu" class="theme-menu">
+    <button onclick="setTheme('purple')">Purple</button>
+    <button onclick="setTheme('aqua')">Aqua</button>
+    <button onclick="setTheme('gold')">Gold</button>
+    <button onclick="setTheme('green')">Green</button>
+    <button onclick="setTheme('black')">Black</button>
+    <button onclick="setTheme('white')">White</button>
+    <button onclick="setTheme('yellow')">Yellow</button>
+  </div>
+</div>
   <!-- HERO -->
   <header class="hero">
     <h1>GodSpell</h1>
