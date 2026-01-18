@@ -1,3 +1,36 @@
+/* ===== THEME VARIABLES ===== */
+:root{
+  --bg-main:#1a0f2e;
+  --bg-accent:#2b1650;
+  --card-bg:rgba(160,120,255,0.15);
+  --text:#f3edff;
+  --glow:#b084ff;
+}
+
+/* AQUA THEME */
+[data-theme="aqua"]{
+  --bg-main:#061e26;
+  --bg-accent:#0b3440;
+  --card-bg:rgba(120,255,255,0.15);
+  --text:#eaffff;
+  --glow:#4deeea;
+}
+
+/* APPLY */
+body{
+  background:radial-gradient(circle at top,var(--bg-accent),var(--bg-main));
+  color:var(--text);
+}
+
+.section,.card,.member-card{
+  background:var(--card-bg);
+}
+
+.btn{
+  background:linear-gradient(90deg,var(--glow),#ffffff,var(--glow));
+  box-shadow:0 0 25px var(--glow);
+}
+
 /* =========================
    GLOBAL RESET & BASE
 ========================= */
