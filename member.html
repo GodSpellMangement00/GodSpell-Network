@@ -1,83 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GodSpell Members</title>
+  <meta charset="UTF-8">
+  <title>GodSpell • Members</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- LINK YOUR MAIN FILES -->
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
-
 <body>
 
   <!-- HEADER -->
-  <header class="page-header">
-    <h1>🌱 GodSpell Members</h1>
-    <p>Our family • Core • Trial • Leadership</p>
+  <section class="section">
+    <h1>🌱 GodSpell Family</h1>
+    <p>Leaders • Core • Trial • Allies</p>
     <a href="index.html" class="btn">← Back to Home</a>
-  </header>
+  </section>
 
-  <!-- SEARCH -->
+  <!-- SEARCH BAR -->
   <section class="section">
     <input
       type="text"
       id="memberSearch"
-      placeholder="Search members..."
-      class="search-bar"
+      class="faq-search"
+      placeholder="Search members like Google..."
     />
   </section>
 
   <!-- LEADERS -->
   <section class="section">
     <h2>👑 Leadership</h2>
-    <div class="grid">
+    <div class="member-grid">
 
-      <div class="card leader" data-name="Sam">Sam</div>
-      <div class="card leader" data-name="Bronzey">Bronzey</div>
-      <div class="card leader" data-name="DeadSlot">DeadSlot</div>
-      <div class="card leader" data-name="Adam">Adam</div>
+      <div class="member-card leader">Sam</div>
+      <div class="member-card leader">Bronzey</div>
+      <div class="member-card leader">DeadSlot (Developer)</div>
+      <div class="member-card leader">Adam (Founder)</div>
+      <div class="member-card leader">st_hardrocks (Co-Founder)</div>
+      <div class="member-card leader">TheGod (Moderator)</div>
 
     </div>
   </section>
 
   <!-- CORE MEMBERS -->
   <section class="section">
-    <h2>💎 Core Members</h2>
-    <div class="grid">
+    <h2>🔥 Core Members</h2>
+    <div class="member-grid">
 
-      <div class="card core" data-name="PIPIPPO">PIPIPPO</div>
-      <div class="card core" data-name="BladeOnChoppa">BladeOnChoppa</div>
-      <div class="card core" data-name="Minato672">Minato672</div>
-      <div class="card core" data-name="Devilsking1">Devilsking1</div>
-      <div class="card core" data-name="MrBeast_07">MrBeast_07</div>
-      <div class="card core" data-name="Slayerknight69">Slayerknight69</div>
+      <div class="member-card core">PIPIPPO</div>
+      <div class="member-card core">BladeOnChoppa</div>
+      <div class="member-card core">Minato672</div>
+      <div class="member-card core">Devilsking1</div>
+      <div class="member-card core">MrBeast_07</div>
+      <div class="member-card core">Slayerknight69</div>
+      <div class="member-card core">cottoncloud01</div>
+      <div class="member-card core">Pro_Dreamy</div>
+      <div class="member-card core">sir_spectro</div>
+      <div class="member-card core">Eight</div>
+      <div class="member-card core">walidwolly09</div>
 
     </div>
   </section>
 
   <!-- TRIAL MEMBERS -->
   <section class="section">
-    <h2>🌿 Trial Members</h2>
-    <div class="grid">
+    <h2>🌱 Trial Members</h2>
+    <div class="member-grid">
 
-      <div class="card trial" data-name="VannahX">VannahX</div>
-      <div class="card trial" data-name="MoonSukes">MoonSukes</div>
-      <div class="card trial" data-name="blazacooks">blazacooks</div>
-      <div class="card trial" data-name="BarGaming_">BarGaming_</div>
+      <div class="member-card trial">VannahX</div>
+      <div class="member-card trial">MoonSukes</div>
+      <div class="member-card trial">blazacooks</div>
+      <div class="member-card trial">BarGaming_</div>
+      <div class="member-card trial">KrishnaYt_129</div>
+      <div class="member-card trial">Slayer_of_Terra</div>
 
     </div>
   </section>
 
-  <!-- PROFILE POPUP -->
-  <div id="profilePopup" class="popup hidden">
-    <div class="popup-card">
-      <h3 id="popupName"></h3>
-      <p id="popupRank"></p>
-      <button class="btn" onclick="closeProfile()">Close</button>
+  <!-- ALLIES -->
+  <section class="section">
+    <h2>🤝 Allies</h2>
+    <div class="member-grid">
+
+      <div class="member-card">
+        Withers<br><small>Leader: shubh_68 • pmjk</small>
+      </div>
+
+      <div class="member-card">
+        Vortex<br><small>Leaders: panther100 • Dibson</small>
+      </div>
+
     </div>
-  </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="section">
+    <p>© GodSpell • Established 2024</p>
+  </footer>
 
 </body>
 </html>
