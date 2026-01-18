@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GodSpell Members</title>
 
+  <!-- LINK YOUR MAIN FILES -->
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <h1>🌱 GodSpell Members</h1>
+    <p>Our family • Core • Trial • Leadership</p>
+    <a href="index.html" class="btn">← Back to Home</a>
+  </header>
+
+  <!-- SEARCH -->
+  <section class="section">
+    <input
+      type="text"
+      id="memberSearch"
+      placeholder="Search members..."
+      class="search-bar"
+    />
+  </section>
+
+  <!-- LEADERS -->
+  <section class="section">
+    <h2>👑 Leadership</h2>
+    <div class="grid">
+
+      <div class="card leader" data-name="Sam">Sam</div>
+      <div class="card leader" data-name="Bronzey">Bronzey</div>
+      <div class="card leader" data-name="DeadSlot">DeadSlot</div>
+      <div class="card leader" data-name="Adam">Adam</div>
+
+    </div>
+  </section>
+
+  <!-- CORE MEMBERS -->
+  <section class="section">
+    <h2>💎 Core Members</h2>
+    <div class="grid">
+
+      <div class="card core" data-name="PIPIPPO">PIPIPPO</div>
+      <div class="card core" data-name="BladeOnChoppa">BladeOnChoppa</div>
+      <div class="card core" data-name="Minato672">Minato672</div>
+      <div class="card core" data-name="Devilsking1">Devilsking1</div>
+      <div class="card core" data-name="MrBeast_07">MrBeast_07</div>
+      <div class="card core" data-name="Slayerknight69">Slayerknight69</div>
+
+    </div>
+  </section>
+
+  <!-- TRIAL MEMBERS -->
+  <section class="section">
+    <h2>🌿 Trial Members</h2>
+    <div class="grid">
+
+      <div class="card trial" data-name="VannahX">VannahX</div>
+      <div class="card trial" data-name="MoonSukes">MoonSukes</div>
+      <div class="card trial" data-name="blazacooks">blazacooks</div>
+      <div class="card trial" data-name="BarGaming_">BarGaming_</div>
+
+    </div>
+  </section>
+
+  <!-- PROFILE POPUP -->
+  <div id="profilePopup" class="popup hidden">
+    <div class="popup-card">
+      <h3 id="popupName"></h3>
+      <p id="popupRank"></p>
+      <button class="btn" onclick="closeProfile()">Close</button>
+    </div>
+  </div>
+
+</body>
+</html>
