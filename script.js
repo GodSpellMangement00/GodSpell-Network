@@ -140,3 +140,21 @@ style.innerHTML = `
   to { transform: scale(2.5); opacity: 0; }
 }`;
 document.head.appendChild(style);
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute("data-theme");
+
+  if (current === "aqua") {
+    html.setAttribute("data-theme", "purple");
+    localStorage.setItem("theme", "purple");
+  } else {
+    html.setAttribute("data-theme", "aqua");
+    localStorage.setItem("theme", "aqua");
+  }
+}
+
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem("theme") || "purple";
+  document.documentElement.setAttribute("data-theme", saved);
+});
