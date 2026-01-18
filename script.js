@@ -1,41 +1,56 @@
 /* =========================
-   THEME SYSTEM (SAVE THEME)
+   THEME SYSTEM (SAVE + TOGGLE)
 ========================= */
-function setTheme(theme) {
-  document.body.className = "theme-" + theme;
-  localStorage.setItem("theme", theme);
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute("data-theme") || "purple";
+  const next = current === "aqua" ? "purple" : "aqua";
+
+  html.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
 }
 
-(function loadTheme() {
-  const saved = localStorage.getItem("theme") || "green";
-  document.body.className = "theme-" + saved;
-})();
+window.addEventListener("load", () => {
+  const saved = localStorage.getItem("theme") || "purple";
+  document.documentElement.setAttribute("data-theme", saved);
+});
 
 /* =========================
-   COPY SERVER IP (ANIMATION)
+   COPY SERVER IP (SAFE + ANIMATED)
 ========================= */
-const copyBtn = document.querySelector(".copy-ip");
-if (copyBtn) {
-  copyBtn.addEventListener("click", () => {
-    navigator.clipboard.writeText("pika-network.net");
-    copyBtn.textContent = "Copied ✔";
-    copyBtn.style.transform = "scale(1.1)";
+function copyServerIP() {
+  const ip = "pika-network.net";
+
+  // universal fallback
+  const tempInput = document.createElement("input");
+  tempInput.value = ip;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  tempInput.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+
+  // button animation
+  const btn = document.activeElement;
+  if (btn) {
+    const oldText = btn.textContent;
+    btn.textContent = "Copied ✔";
+    btn.style.transform = "scale(1.1)";
     setTimeout(() => {
-      copyBtn.textContent = "Copy Server IP";
-      copyBtn.style.transform = "scale(1)";
+      btn.textContent = oldText;
+      btn.style.transform = "scale(1)";
     }, 1500);
-  });
+  }
 }
 
 /* =========================
-   FAQ ACCORDION (SMOOTH)
+   FAQ ACCORDION
 ========================= */
 document.querySelectorAll(".faq-item").forEach(item => {
   item.addEventListener("click", () => {
     const ans = item.querySelector(".faq-answer");
     if (!ans) return;
-    ans.style.display =
-      ans.style.display === "block" ? "none" : "block";
+    ans.style.display = ans.style.display === "block" ? "none" : "block";
   });
 });
 
@@ -55,27 +70,6 @@ if (faqSearch) {
 }
 
 /* =========================
-   MEMBER POPUP (FADE IN)
-========================= */
-function openPopup(name, role = "") {
-  const popup = document.getElementById("popup");
-  if (!popup) return;
-
-  document.getElementById("popupName").textContent = name;
-  const roleEl = document.getElementById("popupRole");
-  if (roleEl) roleEl.textContent = role;
-
-  popup.style.display = "flex";
-  popup.style.opacity = "0";
-  setTimeout(() => (popup.style.opacity = "1"), 10);
-}
-
-function closePopup() {
-  const popup = document.getElementById("popup");
-  if (popup) popup.style.display = "none";
-}
-
-/* =========================
    MEMBER SEARCH
 ========================= */
 const memberSearch = document.getElementById("memberSearch");
@@ -91,7 +85,28 @@ if (memberSearch) {
 }
 
 /* =========================
-   SCROLL REVEAL (SECTIONS)
+   MEMBER POPUP
+========================= */
+function openPopup(name, role = "") {
+  const popup = document.getElementById("popup");
+  if (!popup) return;
+
+  document.getElementById("popupName").textContent = name;
+  const roleEl = document.getElementById("popupRole");
+  if (roleEl) roleEl.textContent = role;
+
+  popup.style.display = "flex";
+  popup.style.opacity = "0";
+  setTimeout(() => popup.style.opacity = "1", 10);
+}
+
+function closePopup() {
+  const popup = document.getElementById("popup");
+  if (popup) popup.style.display = "none";
+}
+
+/* =========================
+   SCROLL REVEAL
 ========================= */
 const revealEls = document.querySelectorAll(".section, .card");
 
@@ -114,6 +129,9 @@ revealEls.forEach(el => {
    BUTTON RIPPLE EFFECT
 ========================= */
 document.querySelectorAll(".btn, button").forEach(btn => {
+  btn.style.position = "relative";
+  btn.style.overflow = "hidden";
+
   btn.addEventListener("click", e => {
     const ripple = document.createElement("span");
     ripple.style.position = "absolute";
@@ -131,7 +149,7 @@ document.querySelectorAll(".btn, button").forEach(btn => {
 });
 
 /* =========================
-   RIPPLE KEYFRAMES (JS-INJECT)
+   RIPPLE KEYFRAMES
 ========================= */
 const style = document.createElement("style");
 style.innerHTML = `
@@ -140,21 +158,3 @@ style.innerHTML = `
   to { transform: scale(2.5); opacity: 0; }
 }`;
 document.head.appendChild(style);
-
-function toggleTheme() {
-  const html = document.documentElement;
-  const current = html.getAttribute("data-theme");
-
-  if (current === "aqua") {
-    html.setAttribute("data-theme", "purple");
-    localStorage.setItem("theme", "purple");
-  } else {
-    html.setAttribute("data-theme", "aqua");
-    localStorage.setItem("theme", "aqua");
-  }
-}
-
-window.addEventListener("load", () => {
-  const saved = localStorage.getItem("theme") || "purple";
-  document.documentElement.setAttribute("data-theme", saved);
-});
