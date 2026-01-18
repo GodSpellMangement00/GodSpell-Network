@@ -9,13 +9,58 @@
   --glow: #b084ff;
 }
 
-/* AQUA THEME */
+/* AQUA */
 [data-theme="aqua"] {
   --bg-main: #061e26;
   --bg-accent: #0b3440;
   --card-bg: rgba(120,255,255,0.15);
   --text: #eaffff;
   --glow: #4deeea;
+}
+
+/* GOLD */
+[data-theme="gold"] {
+  --bg-main: #2b1f05;
+  --bg-accent: #4a3608;
+  --card-bg: rgba(255,200,80,0.18);
+  --text: #fff6d6;
+  --glow: #ffd36a;
+}
+
+/* GREEN */
+[data-theme="green"] {
+  --bg-main: #0b1f14;
+  --bg-accent: #123d28;
+  --card-bg: rgba(120,255,180,0.15);
+  --text: #eafff5;
+  --glow: #3affc6;
+}
+
+/* BLACK */
+[data-theme="black"] {
+  --bg-main: #050505;
+  --bg-accent: #0e0e0e;
+  --card-bg: rgba(255,255,255,0.06);
+  --text: #f2f2f2;
+  --glow: #4deeea;
+}
+
+/* WHITE */
+[data-theme="white"] {
+  --bg-main: #f4f6f8;
+  --bg-accent: #ffffff;
+  --card-bg: rgba(0,0,0,0.06);
+  --text: #1a1a1a;
+  --glow: #b084ff;
+}
+
+/* YELLOW */
+[data-theme="yellow"] {
+  --bg-main: #2a2305;
+  --bg-accent: #4d3f08;
+  --card-bg: rgba(255,230,120,0.18);
+  --text: #fff9dc;
+  --glow: #ffe066;
 }
 
 /* =========================
@@ -36,7 +81,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
-  position: relative;
+  transition: background 0.6s ease, color 0.4s ease;
 }
 
 /* =========================
@@ -56,13 +101,8 @@ body {
   opacity: 0.9;
 }
 
-.hero .btn {
-  display: inline-block;
-  margin-top: 20px;
-}
-
 /* =========================
-   THEME SWITCH
+   THEME PICKER (UI READY)
 ========================= */
 .theme-switch {
   position: fixed;
@@ -70,6 +110,26 @@ body {
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
+  display: flex;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+}
+
+.theme-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.theme-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px currentColor;
 }
 
 /* =========================
@@ -124,9 +184,7 @@ body {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow:
-    0 0 25px var(--glow),
-    0 20px 40px rgba(0,0,0,0.45);
+  box-shadow: 0 0 25px var(--glow);
 }
 
 /* =========================
@@ -145,54 +203,10 @@ body {
     0 0 25px var(--glow),
     inset 0 0 12px rgba(255,255,255,0.7);
   animation: glowPulse 3s infinite alternate;
-  transition: transform 0.25s ease;
-}
-
-.btn:hover {
-  transform: scale(1.08);
 }
 
 /* =========================
-   FAQ SEARCH
-========================= */
-.faq-search {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 35px;
-  padding: 16px 24px;
-  border-radius: 999px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background: rgba(255,255,255,0.15);
-  color: var(--text);
-  box-shadow:
-    inset 0 0 18px rgba(255,255,255,0.2),
-    0 0 35px var(--glow);
-}
-
-/* =========================
-   GALLERY
-========================= */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 26px;
-}
-
-.gallery-item img {
-  width: 100%;
-  border-radius: 16px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.gallery-item img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px var(--glow);
-}
-
-/* =========================
-   MEMBERS
+   MEMBERS / SKINS
 ========================= */
 .member-grid {
   display: grid;
@@ -205,18 +219,10 @@ body {
   border-radius: 18px;
   background: var(--card-bg);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.member-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 0 25px var(--glow);
-}
-
-/* SKINS */
 .skin {
   width: 120px;
-  height: auto;
   margin: 0 auto 10px;
   display: block;
   image-rendering: pixelated;
@@ -225,15 +231,14 @@ body {
 /* =========================
    FOOTER
 ========================= */
-footer,
-.author {
+footer {
   text-align: center;
   margin: 40px auto;
   opacity: 0.7;
 }
 
 /* =========================
-   FLOATING PARTICLES
+   PARTICLES
 ========================= */
 body::before {
   content: "";
@@ -261,7 +266,6 @@ body::before {
 }
 
 @keyframes floatParticles {
-  from { transform: translateY(0); }
   to { transform: translateY(-200px); }
 }
 
@@ -269,12 +273,6 @@ body::before {
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-  .section {
-    margin: 40px 14px;
-    padding: 22px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-   }
+  .hero h1 { font-size: 2.2rem; }
+  .section { margin: 40px 14px; padding: 22px; }
+                        }
