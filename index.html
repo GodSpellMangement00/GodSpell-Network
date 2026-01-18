@@ -1,106 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GodSpell | Build a Family</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GodSpell</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JS -->
+  <script defer src="script.js"></script>
 </head>
-
-<body class="theme-green">
-
-  <!-- THEME SWITCHER -->
-  <div class="theme-switcher">
-    <button class="btn" onclick="setTheme('green')">🌿 Cozy Green</button>
-    <button class="btn" onclick="setTheme('purple')">💜 Cozy Purple</button>
-    <button class="btn" onclick="setTheme('aqua')">💧 Cozy Aqua</button>
-  </div>
+<body>
 
   <!-- HERO -->
-  <section class="section">
-    <h1>🌿 GodSpell</h1>
-    <p>
-      Not just grinding — we build a family and connect people
-      from different parts of the world.
-    </p>
+  <header class="hero">
+    <h1>GodSpell</h1>
+    <p>Not just grinding — we build a family.</p>
+    <p class="small">Established in 2024</p>
 
-    <a href="https://discord.gg/YQVF7sy2gR" class="btn">
-      Join our Discord
-    </a>
+    <a href="https://discord.gg/" class="btn primary">Join Our Discord</a>
+  </header>
+
+  <!-- OUR STORY -->
+  <section class="section">
+    <h2>📜 Our Story</h2>
+    <div class="card">
+      GodSpell started with Sam and his friends. Through patience,
+      grinding, and trust, it grew into a global Minecraft family.
+    </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section card">
-    <h2>About GodSpell</h2>
-    <p>
-      Founded in 2024 by Sam, GodSpell started with pure grind and passion.
-      Today, it stands as a trusted Minecraft survival family.
-    </p>
-    <p>
-      We play on <b>pika-network.net</b> (Survival) and focus on
-      building, chatting, and growing together.
-    </p>
+  <!-- WHERE WE PLAY -->
+  <section class="section">
+    <h2>🎮 Where We Play</h2>
+    <div class="card">
+      <p><strong>Game:</strong> Minecraft</p>
+      <p><strong>Server:</strong> pika-network.net</p>
+      <p><strong>Mode:</strong> Survival</p>
 
-    <button class="btn copy-ip">Copy Server IP</button>
+      <button class="btn glow" id="copyIP">Copy Server IP</button>
+    </div>
   </section>
 
   <!-- WHAT WE DO -->
   <section class="section">
-    <h2>What We Do</h2>
+    <h2>🎯 What We Do</h2>
 
-    <div class="card">🎮 Minecraft Survival Grinding</div>
-    <div class="card">💬 Chill & Friendly Chats</div>
-    <div class="card">🏗️ Building & Mega Projects</div>
-    <div class="card">🎁 Giveaways & Community Events</div>
+    <div class="grid">
+      <div class="card">⛏️ Survival Grinding</div>
+      <div class="card">💬 Chill & Friendly Chats</div>
+      <div class="card">🏗️ Mega Builds & Projects</div>
+      <div class="card">🎁 Giveaways & Events</div>
+    </div>
   </section>
 
-  <!-- MEMBERS PREVIEW -->
+  <!-- MEMBERS PREVIEW (FIXED) -->
   <section class="section">
     <h2>🌱 Members</h2>
-    <p>Leaders • Core • Trial • Allies</p>
+    <p class="muted">Leaders • Core • Trial • Allies</p>
 
-    <a href="member.html" class="btn">
-      View All Members
-    </a>
+    <div class="card center">
+      <p>Want to see all members with profiles?</p>
+      <a href="member.html" class="btn glow">👉 View All Members</a>
+    </div>
   </section>
 
   <!-- GALLERY PREVIEW -->
-  <section class="section card">
-    <h2>🏗️ Builds & Bases</h2>
-    <p>See what our family creates together.</p>
+  <section class="section">
+    <h2>🖼️ Builds & Bases</h2>
+    <p class="muted">See what our family creates together</p>
 
-    <a href="gallery.html" class="btn">
-      View Gallery
-    </a>
+    <div class="card center">
+      <a href="gallery.html" class="btn glow">View Gallery</a>
+    </div>
   </section>
 
-  <!-- HOW TO JOIN -->
+  <!-- FAQ PREVIEW -->
   <section class="section">
-    <h2>How to Join</h2>
-
-    <div class="card">1️⃣ Join our Discord</div>
-    <div class="card">2️⃣ Become a Trial Member</div>
-    <div class="card">3️⃣ Grow into a Core Member</div>
-
-    <a href="faq.html" class="btn">
-      View FAQs
-    </a>
+    <h2>❓ FAQs</h2>
+    <div class="card center">
+      <p>Have questions about GodSpell?</p>
+      <a href="faq.html" class="btn">Go to FAQs</a>
+    </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="section">
-    <p>© GodSpell • Established 2024</p>
+  <footer class="footer">
+    <p>© 2024 GodSpell • Built with 💜 by DeadSlot</p>
   </footer>
 
-  <!-- JS -->
-  <script>
-    function setTheme(theme) {
-      document.body.className = 'theme-' + theme;
-    }
-  </script>
-
-  <script src="script.js"></script>
 </body>
 </html>
