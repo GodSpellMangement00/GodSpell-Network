@@ -1,36 +1,33 @@
 /* =========================
-   THEME SYSTEM (SAVE + TOGGLE)
+   THEME SYSTEM (MANUAL SELECT)
 ========================= */
-function toggleTheme() {
-  const html = document.documentElement;
-  const current = html.getAttribute("data-theme") || "purple";
-  const next = current === "aqua" ? "purple" : "aqua";
-
-  html.setAttribute("data-theme", next);
-  localStorage.setItem("theme", next);
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
 }
 
+// Load saved theme (default = purple)
 window.addEventListener("load", () => {
-  const saved = localStorage.getItem("theme") || "purple";
-  document.documentElement.setAttribute("data-theme", saved);
+  const savedTheme = localStorage.getItem("theme") || "purple";
+  setTheme(savedTheme);
 });
 
 /* =========================
-   COPY SERVER IP (SAFE + ANIMATED)
+   COPY SERVER IP (UNIVERSAL)
 ========================= */
 function copyServerIP() {
   const ip = "pika-network.net";
 
-  // universal fallback
   const tempInput = document.createElement("input");
   tempInput.value = ip;
   document.body.appendChild(tempInput);
+
   tempInput.select();
   tempInput.setSelectionRange(0, 99999);
   document.execCommand("copy");
+
   document.body.removeChild(tempInput);
 
-  // button animation
   const btn = document.activeElement;
   if (btn) {
     const oldText = btn.textContent;
