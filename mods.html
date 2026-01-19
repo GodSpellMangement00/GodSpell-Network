@@ -2,47 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GodSpell • Clan Mods</title>
+  <title>GodSpell Mods</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* PAGE-SPECIFIC FIXES */
+    body {
+      background:
+        linear-gradient(rgba(10,10,20,0.75), rgba(10,10,20,0.75)),
+        url("gallery/minecraft-bg.png") center / cover no-repeat fixed;
+      min-height: 100vh;
+    }
+
+    .mods-container {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 40px;
+      background: rgba(20,20,40,0.85);
+      border-radius: 24px;
+      box-shadow: 0 0 40px rgba(120,120,255,0.4);
+    }
+
+    .mods-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .mods-sub {
+      text-align: center;
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .mods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .mod-card {
+      display: block;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(80,80,160,0.2);
+      text-decoration: none;
+      color: #ffffff;
+      box-shadow: 0 0 18px rgba(140,140,255,0.3);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .mod-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px rgba(170,170,255,0.6);
+    }
+
+    .mod-card h3 {
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    .mod-card p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .mods-back {
+      display: block;
+      margin: 40px auto 0;
+      text-align: center;
+    }
+  </style>
 </head>
 
-<body class="mod-page">
+<body>
 
-  <div class="mod-wrapper">
+  <div class="mods-container">
 
-    <h1 class="mod-title">🧱 GodSpell Clan Mods</h1>
-    <p class="mod-subtitle">
+    <h1 class="mods-title">🧱 GodSpell Clan Mods</h1>
+    <p class="mods-sub">
       Mods commonly used by GodSpell members (PvP + Survival)
     </p>
 
-    <div class="mod-grid">
+    <div class="mods-grid">
 
       <a class="mod-card" href="modfile/mod1.jar" download>
         <h3>⌨️ Keystrokes Display</h3>
-        <p>Shows WASD, mouse clicks, and CPS on screen.</p>
+        <p>Shows WASD, mouse clicks, and CPS.</p>
       </a>
 
       <a class="mod-card" href="modfile/mod2.jar" download>
         <h3>🛡️ Armor HUD</h3>
-        <p>Displays armor durability and equipment clearly.</p>
+        <p>Displays armor durability on screen.</p>
       </a>
 
       <a class="mod-card" href="modfile/mod3.jar" download>
         <h3>🧪 Potion HUD</h3>
-        <p>Clean and readable potion effect display.</p>
+        <p>Readable potion effects overlay.</p>
       </a>
 
       <a class="mod-card" href="modfile/mod4.jar" download>
         <h3>⚙️ Lithium</h3>
-        <p>Optimizes game logic for smoother performance.</p>
+        <p>Optimized game logic for performance.</p>
       </a>
 
       <a class="mod-card" href="modfile/mod5.jar" download>
         <h3>🔥 FerriteCore</h3>
-        <p>Reduces memory usage and lag during fights.</p>
+        <p>Reduces memory usage and lag.</p>
       </a>
 
       <a class="mod-card" href="modfile/mod6.jar" download>
@@ -52,18 +121,18 @@
 
       <a class="mod-card" href="modfile/mod7.jar" download>
         <h3>📐 Litematica</h3>
-        <p>Shows build blueprints for large projects.</p>
+        <p>Blueprints for large builds.</p>
       </a>
 
       <a class="mod-card" href="modfile/mod8.jar" download>
         <h3>📍 MiniHUD</h3>
-        <p>Coordinates, angles, and block info overlay.</p>
+        <p>Coordinates, angles, block info.</p>
       </a>
 
     </div>
 
-    <div class="mod-center">
-      <a href="index.html" class="mod-back">← Back to Home</a>
+    <div class="mods-back">
+      <a href="index.html" class="btn">← Back to Home</a>
     </div>
 
   </div>
