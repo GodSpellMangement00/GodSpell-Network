@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GodSpell • Clan Mods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Minecraftia", system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("minecraft-bg.png") center / cover no-repeat fixed;
+      color: #eaffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== MAIN HUD PANEL ===== */
+    .hud {
+      width: 92%;
+      max-width: 1100px;
+      background: rgba(20, 25, 35, 0.88);
+      border: 4px solid #5f7cff;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow:
+        0 0 40px rgba(95,124,255,0.6),
+        inset 0 0 30px rgba(0,0,0,0.8);
+    }
+
+    .hud h1 {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 1.9rem;
+      color: #a9c8ff;
+      text-shadow: 0 0 10px #5f7cff;
+    }
+
+    .hud p {
+      text-align: center;
+      opacity: 0.85;
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+
+    /* ===== MOD GRID ===== */
+    .mod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    /* ===== MOD BOX ===== */
+    .mod-box {
+      background: linear-gradient(
+        145deg,
+        rgba(40,50,80,0.9),
+        rgba(20,25,45,0.9)
+      );
+      border: 3px solid rgba(120,160,255,0.5);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow:
+        inset 0 0 14px rgba(0,0,0,0.8),
+        0 0 20px rgba(95,124,255,0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .mod-box:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 0 30px rgba(95,124,255,0.9),
+        inset 0 0 16px rgba(0,0,0,0.9);
+    }
+
+    .mod-box h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #cfe0ff;
+    }
+
+    .mod-box p {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      opacity: 0.9;
+    }
+
+    /* ===== BACK BUTTON ===== */
+    .back {
+      display: block;
+      width: fit-content;
+      margin: 35px auto 0;
+      padding: 12px 26px;
+      text-decoration: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #5f7cff, #8fa8ff);
+      color: #0b0f1f;
+      font-weight: bold;
+      box-shadow: 0 0 25px rgba(95,124,255,0.8);
+    }
+
+    .back:hover {
+      box-shadow: 0 0 40px rgba(95,124,255,1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hud">
+    <h1>🧰 GodSpell Clan Mods</h1>
+    <p>Mods commonly used by GodSpell members (PvP + Survival)</p>
+
+    <div class="mod-grid">
+
+      <div class="mod-box">
+        <h3>⌨️ Keystrokes Display</h3>
+        <p>Shows WASD, mouse clicks, and CPS on screen while playing.</p>
+      </div>
+
+      <div class="mod-box">
+        <h3>🛡️ Armor HUD</h3>
+        <p>Displays armor durability and equipment clearly on screen.</p>
+      </div>
+
+      <div class="mod-box">
+        <h3>🧪 Potion HUD</h3>
+        <p>Shows active potion effects in a clean, readable format.</p>
+      </div>
+
+      <div class="mod-box">
+        <h3>⚙️ Lithium</h3>
+        <p>Optimizes game logic for smoother performance and stability.</p>
+      </div>
+
+      <div class="mod-box">
+        <h3>🧱 FerriteCore</h3>
+        <p>Reduces memory usage and lag, especially during fights.</p>
+      </div>
+
+      <div class="mod-box">
+        <h3>📊 BetterF3</h3>
+        <p>Clean and customizable debug screen replacement.</p>
+      </div>
+
+      <div class="mod-box">
+        <h3>📐 Litematica</h3>
+        <p>Shows build blueprints to help with large structures.</p>
+      </div>
+
+      <div class="mod-box">
+        <h3>📍 MiniHUD</h3>
+        <p>Displays coordinates, angles, and block information.</p>
+      </div>
+
+    </div>
+
+    <a href="index.html" class="back">← Back to Home</a>
+  </div>
+
+</body>
+</html>
