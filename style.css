@@ -285,3 +285,35 @@ footer {
   .hero h1 { font-size: 2.2rem; }
   .section { margin: 40px 14px; padding: 22px; }
 }
+
+/* =========================
+   MODS SECTION (EXTRA POLISH)
+========================= */
+.section h2 {
+  letter-spacing: 0.5px;
+}
+
+.section .muted {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.section .card.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Mods button – slightly stronger glow */
+.section .btn.glow {
+  animation: modGlow 3s infinite alternate;
+}
+
+@keyframes modGlow {
+  from {
+    box-shadow: 0 0 18px var(--glow);
+  }
+  to {
+    box-shadow: 0 0 40px var(--glow);
+  }
+      }
