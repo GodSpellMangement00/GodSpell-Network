@@ -287,33 +287,165 @@ footer {
 }
 
 /* =========================
-   MODS SECTION (EXTRA POLISH)
+   MOD PAGE – MINECRAFT STYLE
 ========================= */
-.section h2 {
-  letter-spacing: 0.5px;
+
+body.mod-page {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("gallery/minecraft-bg.png") center / cover no-repeat fixed;
+  color: #eaffff;
+  min-height: 100vh;
 }
 
-.section .muted {
-  font-size: 0.9rem;
-  opacity: 0.75;
+/* =========================
+   MAIN MOD CONTAINER
+========================= */
+
+.mod-wrapper {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 30px;
+  background: rgba(20, 25, 35, 0.88);
+  border-radius: 18px;
+  border: 2px solid #5fa8ff;
+  box-shadow:
+    0 0 35px rgba(90,150,255,0.8),
+    inset 0 0 25px rgba(255,255,255,0.08);
 }
 
-.section .card.center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* =========================
+   TITLE
+========================= */
+
+.mod-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+  color: #cfe6ff;
 }
 
-/* Mods button – slightly stronger glow */
-.section .btn.glow {
-  animation: modGlow 3s infinite alternate;
+.mod-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 30px;
 }
 
-@keyframes modGlow {
-  from {
-    box-shadow: 0 0 18px var(--glow);
+/* =========================
+   MOD GRID
+========================= */
+
+.mod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+/* =========================
+   MOD CARDS (DOWNLOADABLE)
+========================= */
+
+.mod-card {
+  display: block;
+  padding: 16px;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 40, 60, 0.95),
+    rgba(15, 20, 35, 0.95)
+  );
+  border-radius: 12px;
+  border: 1.5px solid #4fa3ff;
+  text-decoration: none;
+  color: #eaffff;
+  box-shadow:
+    inset 0 0 14px rgba(255,255,255,0.08),
+    0 0 18px rgba(80,140,255,0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.mod-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 0 35px rgba(120,190,255,0.95),
+    inset 0 0 18px rgba(255,255,255,0.15);
+}
+
+/* =========================
+   MOD CARD TEXT
+========================= */
+
+.mod-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: #cfe9ff;
+}
+
+.mod-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* =========================
+   DOWNLOAD TAG
+========================= */
+
+.mod-card::after {
+  content: "⬇ Download";
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 0.7rem;
+  color: #9fd1ff;
+  opacity: 0.7;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.mod-back {
+  display: inline-block;
+  margin: 35px auto 0;
+  padding: 12px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #001b33;
+  background: linear-gradient(135deg, #5fa8ff, #9fd1ff);
+  box-shadow: 0 0 25px rgba(120,190,255,0.8);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mod-back:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(160,220,255,1);
+}
+
+/* =========================
+   CENTER ALIGN
+========================= */
+
+.mod-center {
+  text-align: center;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .mod-wrapper {
+    margin: 50px 14px;
+    padding: 22px;
   }
-  to {
-    box-shadow: 0 0 40px var(--glow);
+
+  .mod-title {
+    font-size: 1.5rem;
   }
-      }
+}
