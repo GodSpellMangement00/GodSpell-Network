@@ -551,3 +551,107 @@ body.mod-page {
   cursor: pointer;
   color: #fff;
 }
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+/* SEARCH BAR (GOOGLE STYLE) */
+.faq-search-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.faq-search {
+  width: 100%;
+  max-width: 720px;
+  height: 56px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 1.05rem;
+  background: rgba(255,255,255,0.18);
+  color: var(--text);
+  box-shadow:
+    0 0 35px var(--glow),
+    inset 0 0 18px rgba(255,255,255,0.25);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.faq-search:focus {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 45px var(--glow),
+    inset 0 0 20px rgba(255,255,255,0.35);
+}
+
+.faq-search::placeholder {
+  opacity: 0.8;
+}
+
+/* =========================
+   FAQ ITEMS
+========================= */
+.faq-item {
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.faq-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: var(--card-bg);
+  box-shadow:
+    inset 0 0 14px rgba(255,255,255,0.08),
+    0 0 20px rgba(0,0,0,0.35);
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+.faq-item h3:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 30px var(--glow),
+    inset 0 0 16px rgba(255,255,255,0.12);
+}
+
+/* =========================
+   FAQ ANSWERS (HIDDEN BY DEFAULT)
+========================= */
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.25);
+  line-height: 1.6;
+  opacity: 0.9;
+  box-shadow:
+    inset 0 0 12px rgba(255,255,255,0.08);
+}
+
+/* =========================
+   ACTIVE STATE (OPTIONAL)
+========================= */
+.faq-item.active h3 {
+  box-shadow:
+    0 0 35px var(--glow),
+    inset 0 0 18px rgba(255,255,255,0.15);
+}
+
+/* =========================
+   MOBILE TWEAKS
+========================= */
+@media (max-width: 768px) {
+  .faq-search {
+    height: 52px;
+    font-size: 1rem;
+  }
+
+  .faq-item h3 {
+    font-size: 0.95rem;
+  }
+}
