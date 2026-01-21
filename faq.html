@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="purple">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GodSpell • FAQs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
@@ -11,140 +11,189 @@
 
 <body>
 
-  <section class="section">
+  <!-- HERO -->
+  <header class="hero">
     <h1>❓ GodSpell FAQs</h1>
-    <p>Search anything about our clan, rules, joining, and gameplay</p>
-  </section>
+    <p>Questions players usually ask about our family</p>
+  </header>
 
-  <!-- GOOGLE STYLE SEARCH -->
+  <!-- SEARCH -->
   <section class="section">
     <input
       type="text"
       id="faqSearch"
       class="faq-search"
       placeholder="Search questions like Google..."
-    />
+    >
   </section>
 
   <!-- FAQ LIST -->
   <section class="section">
 
-    <!-- JOINING -->
-    <div class="faq-item">
-      <h3>How can I join GodSpell?</h3>
-      <div class="faq-answer">Join our Discord and talk to staff.</div>
-    </div>
+    <!-- TEMPLATE FAQ ITEM -->
+    <!-- Copy structure repeated below -->
 
-    <div class="faq-item">
-      <h3>Is GodSpell only for Minecraft?</h3>
-      <div class="faq-answer">Yes, we focus only on Minecraft Survival.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Which server do you play on?</h3>
-      <div class="faq-answer">We play on pika-network.net (Survival).</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Is there any age limit?</h3>
-      <div class="faq-answer">No age limit. Just be respectful.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Is toxicity allowed?</h3>
-      <div class="faq-answer">No. Toxicity is strictly not allowed.</div>
-    </div>
-
-    <!-- ROLES -->
-    <div class="faq-item">
-      <h3>What is a Trial Member?</h3>
-      <div class="faq-answer">Trial members are new players being evaluated.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>How to become a Core Member?</h3>
-      <div class="faq-answer">Be active, respectful, and helpful.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can Trial Members become staff?</h3>
-      <div class="faq-answer">Yes, staff selection is based on trust.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Who are the leaders?</h3>
-      <div class="faq-answer">Sam and Bronzey are the main leaders.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Who manages the website?</h3>
-      <div class="faq-answer">DeadSlot is the developer.</div>
-    </div>
-
-    <!-- COMMUNITY -->
-    <div class="faq-item">
-      <h3>Is GodSpell friendly for beginners?</h3>
-      <div class="faq-answer">Yes, we help new players grow.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Do you host events?</h3>
-      <div class="faq-answer">Yes, giveaways and community events.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I invite my friends?</h3>
-      <div class="faq-answer">Yes, as long as they follow rules.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Is griefing allowed?</h3>
-      <div class="faq-answer">No, griefing is not tolerated.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Do you support builders?</h3>
-      <div class="faq-answer">Yes, builders are highly respected.</div>
-    </div>
-
-    <!-- GENERAL -->
-    <div class="faq-item">
-      <h3>When was GodSpell created?</h3>
-      <div class="faq-answer">GodSpell was established in 2024.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Is voice chat mandatory?</h3>
-      <div class="faq-answer">No, text chat is fine.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>What language is used?</h3>
-      <div class="faq-answer">English only.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>Can I leave and rejoin later?</h3>
-      <div class="faq-answer">Yes, but rules still apply.</div>
-    </div>
-
-    <div class="faq-item">
-      <h3>What if my question isn’t here?</h3>
+    <div class="faq-item card">
+      <h3>🟩 What is GodSpell?</h3>
       <div class="faq-answer">
-        Join our Discord and ask staff directly.
-        <br><br>
-        <a href="https://discord.gg/YQVF7sy2gR" class="btn glow">
-          Join Discord
-        </a>
+        GodSpell is a friendly Minecraft survival clan focused on teamwork, respect, and long-term growth.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>📅 When was GodSpell founded?</h3>
+      <div class="faq-answer">
+        GodSpell was founded in 2024.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>👑 Who founded GodSpell?</h3>
+      <div class="faq-answer">
+        GodSpell was founded by Sam.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>💎 What makes GodSpell different?</h3>
+      <div class="faq-answer">
+        We prioritize family, respect, and zero toxicity over ranks and ego.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>🎮 Is GodSpell casual or competitive?</h3>
+      <div class="faq-answer">
+        Both. You can chill, build, grind, or PvP at your own pace.
+      </div>
+    </div>
+
+    <!-- JOINING -->
+    <div class="faq-item card">
+      <h3>🚀 How can I join GodSpell?</h3>
+      <div class="faq-answer">
+        Join our Discord and talk with the community.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>💬 Is Discord required?</h3>
+      <div class="faq-answer">
+        Yes, Discord is required for communication and announcements.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>🧑‍🤝‍🧑 What is a Trial Member?</h3>
+      <div class="faq-answer">
+        Trial Members are new players being evaluated for trust and activity.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>🌱 How do I become a Core Member?</h3>
+      <div class="faq-answer">
+        Stay active, respectful, and helpful during your trial period.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>👥 Can I invite my friends?</h3>
+      <div class="faq-answer">
+        Yes, as long as they follow clan rules.
+      </div>
+    </div>
+
+    <!-- GAMEPLAY -->
+    <div class="faq-item card">
+      <h3>🗺️ Which server do you play on?</h3>
+      <div class="faq-answer">
+        We play on pika-network.net (Survival).
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>⚔️ Do you PvP?</h3>
+      <div class="faq-answer">
+        Yes, PvP players are welcome.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>🏗️ Do you do mega builds?</h3>
+      <div class="faq-answer">
+        Yes, group builds and projects are common.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>🌾 Are farms shared?</h3>
+      <div class="faq-answer">
+        Most community farms are shared with trust.
+      </div>
+    </div>
+
+    <!-- MODS -->
+    <div class="faq-item card">
+      <h3>🛠️ Are mods allowed?</h3>
+      <div class="faq-answer">
+        Client-side performance and HUD mods are allowed.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>🚫 Are hacked clients allowed?</h3>
+      <div class="faq-answer">
+        No. Hacked clients are strictly forbidden.
+      </div>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="faq-item card">
+      <h3>🎁 Do you host events?</h3>
+      <div class="faq-answer">
+        Yes, including PvP events, giveaways, and community activities.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>🎉 How often are events?</h3>
+      <div class="faq-answer">
+        Events happen depending on activity and availability.
+      </div>
+    </div>
+
+    <!-- RULES -->
+    <div class="faq-item card">
+      <h3>🚫 Is toxicity allowed?</h3>
+      <div class="faq-answer">
+        No. Toxicity is not tolerated in GodSpell.
+      </div>
+    </div>
+
+    <div class="faq-item card">
+      <h3>🤝 What if someone breaks rules?</h3>
+      <div class="faq-answer">
+        Warnings or actions are taken by staff.
+      </div>
+    </div>
+
+    <!-- FALLBACK -->
+    <div class="faq-item card">
+      <h3>❓ My question isn’t listed</h3>
+      <div class="faq-answer">
+        Join our Discord and our family will help you ❤️
       </div>
     </div>
 
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer author">
-    <p>© 2024 GodSpell • FAQs</p>
-  </footer>
+  <!-- BACK -->
+  <div class="section">
+    <div class="card center">
+      <a href="index.html" class="btn">← Back to Home</a>
+    </div>
+  </div>
 
 </body>
 </html>
