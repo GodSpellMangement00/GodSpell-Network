@@ -1,1 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply • GodSpell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .apply-box{
+      max-width:720px;
+      width:92%;
+      background:var(--card-bg);
+      border-radius:26px;
+      padding:40px 30px;
+      box-shadow:0 0 40px var(--glow);
+      text-align:center;
+    }
+
+    .step{
+      display:none;
+    }
+    .step.active{
+      display:block;
+    }
+
+    .apply-box h2{
+      margin-bottom:10px;
+    }
+
+    .apply-box p{
+      opacity:.85;
+      margin-bottom:22px;
+    }
+
+    input, textarea, select{
+      width:100%;
+      padding:14px 18px;
+      border-radius:14px;
+      border:none;
+      outline:none;
+      background:rgba(255,255,255,.15);
+      color:var(--text);
+      font-size:1rem;
+      margin-bottom:20px;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .nav-buttons{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .progress{
+      margin-bottom:18px;
+      opacity:.8;
+      font-size:.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="apply-box">
+
+  <div class="progress" id="progress">Step 1 of 5</div>
+
+  <!-- FORM (redirects to Google Form) -->
+  <form
+    action="https://forms.gle/fjZ7e5UBrt1zy3HM9"
+    method="GET"
+    target="_blank"
+  >
+
+    <!-- STEP 1 -->
+    <div class="step active">
+      <h2>🎮 Welcome to GodSpell</h2>
+      <p>Let’s start with the basics</p>
+
+      <input name="entry.IGN" placeholder="Minecraft IGN" required>
+      <input name="entry.Discord" placeholder="Discord Username" required>
+
+      <div class="nav-buttons">
+        <span></span>
+        <button type="button" class="btn" onclick="nextStep()">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step">
+      <h2>📆 Activity & Playstyle</h2>
+
+      <input name="entry.Activity" placeholder="How active are you? (daily / weekly + hours)" required>
+
+      <select name="entry.Playstyle" required>
+        <option value="">What do you enjoy most?</option>
+        <option>PvP</option>
+        <option>Building</option>
+        <option>Redstone</option>
+        <option>Grinding</option>
+        <option>Mixed / Everything</option>
+      </select>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn" onclick="prevStep()">← Back</button>
+        <button type="button" class="btn" onclick="nextStep()">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step">
+      <h2>⚔️ Strengths</h2>
+
+      <textarea
+        name="entry.Strengths"
+        placeholder="What makes you a good Minecraft player?"
+        required
+      ></textarea>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn" onclick="prevStep()">← Back</button>
+        <button type="button" class="btn" onclick="nextStep()">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step">
+      <h2>🤝 Community Mindset</h2>
+
+      <textarea
+        name="entry.Behavior"
+        placeholder="How do you behave in a group or clan?"
+        required
+      ></textarea>
+
+      <textarea
+        name="entry.Drama"
+        placeholder="How do you handle drama or toxic players?"
+        required
+      ></textarea>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn" onclick="prevStep()">← Back</button>
+        <button type="button" class="btn" onclick="nextStep()">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step">
+      <h2>📜 Final Step</h2>
+
+      <textarea
+        name="entry.Why"
+        placeholder="Why do you want to join GodSpell?"
+        required
+      ></textarea>
+
+      <label style="display:block;margin-bottom:20px;">
+        <input type="checkbox" required>
+        I agree to follow GodSpell rules and respect everyone
+      </label>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn" onclick="prevStep()">← Back</button>
+        <button type="submit" class="btn glow">Submit Application</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+<script>
+let step = 0;
+const steps = document.querySelectorAll(".step");
+const progress = document.getElementById("progress");
+
+function update(){
+  steps.forEach(s=>s.classList.remove("active"));
+  steps[step].classList.add("active");
+  progress.textContent = `Step ${step+1} of ${steps.length}`;
+}
+
+function nextStep(){
+  if(step < steps.length-1){ step++; update(); }
+}
+function prevStep(){
+  if(step > 0){ step--; update(); }
+}
+</script>
+
+</body>
+</html>
