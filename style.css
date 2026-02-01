@@ -741,3 +741,14 @@ body.mod-page {
     font-size: 1.8rem;
   }
 }
+
+#channelList li {
+  padding: 8px 14px;
+  margin: 6px auto;
+  max-width: 420px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.08);
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
