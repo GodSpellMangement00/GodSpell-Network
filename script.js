@@ -174,3 +174,42 @@ document.addEventListener("click", e => {
     menu.style.display = "none";
   }
 });
+
+const DISCORD_SERVER_ID = "1329213382473158768";
+const WIDGET_URL =
+  `https://discord.com/api/guilds/${DISCORD_SERVER_ID}/widget.json`;
+
+function loadDiscordStats() {
+  fetch(WIDGET_URL)
+    .then(res => res.json())
+    .then(data => {
+      // Online count
+      const online = data.presence_count ?? "N/A";
+      document.getElementById("onlineCount").textContent = online;
+
+      // Channel list
+      const list = document.getElementById("channelList");
+      list.innerHTML = "";
+
+      if (data.channels && data.channels.length) {
+        data.channels.forEach(ch => {
+          const li = document.createElement("li");
+          li.textContent = `# ${ch.name}`;
+          list.appendChild(li);
+        });
+      } else {
+        list.innerHTML = "<li>No public channels</li>";
+      }
+    })
+    .catch(() => {
+      document.getElementById("onlineCount").textContent = "Unavailable";
+      document.getElementById("channelList").innerHTML =
+        "<li>Widget unavailable</li>";
+    });
+}
+
+// Load once on page load
+loadDiscordStats();
+
+// 🔁 Auto refresh every 30 seconds
+setInterval(loadDiscordStats, 30000);
